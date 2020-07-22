@@ -1,0 +1,72 @@
+.ttt:hover{
+    background-color: rgb(43, 41, 41);
+}
+
+.c{
+    background-image: url("../../assets/img/home.jpg");
+    height: 1000px;
+    background-position: center;
+    
+}
+
+.form{
+    /* background-image: url("../../assets/img/home.jpg");
+    height: 800px;
+    background-position: center; */
+    border: 2px solid rgb(0, 0, 0);
+    padding: 70px 40px;
+    margin-top: 80px;
+    -webkit-box-shadow: 2px 3px 17px 11px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 3px 17px 11px rgba(0,0,0,0.75);
+box-shadow: 2px 3px 17px 11px rgba(0,0,0,0.75);
+}
+
+.img-responsive{
+    width: 100px;
+    height:100px;
+    border-radius: 50%;
+    position: absolute;
+    top:30px;
+   /* padding-bottom:1cm; */
+    left:calc(50% - 50px);
+}
+
+h1{
+    color: rgb(108, 112, 112);
+    text-align: center;
+    font-weight: bold;
+    margin-top:-20px;
+    font-size: 35px;
+}
+
+label{
+    color: white;
+    font-size: 20px;
+}
+
+
+
+input,img,button{
+    -webkit-box-shadow: 2px 3px 17px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 3px 17px 1px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 17px 1px rgba(0,0,0,0.75);
+}
+
+input,select{
+    opacity: 0.5;
+}
+
+.um{
+    font-style: italic; 
+    font-weight: bold;
+    font-size:0.9cm;
+    color: rgb(43, 255, 0);
+    text-align: center;
+ background-image: url(../../assets/img/tenor1.jpg);
+ background-size: contain;
+ height: 530px; 
+  width: 500px;
+  margin-top: 1cm;
+  margin-left: 11cm;
+  padding-top: 0.3cm;
+}

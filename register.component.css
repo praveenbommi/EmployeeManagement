@@ -1,0 +1,84 @@
+/* 
+
+.c{
+    background-image: url("../../assets/img/lockkey.jpg");
+    height: 560px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.card:hover{
+    
+        background-image: url("../../assets/img/vector2.jpg");
+        background-size: cover;
+    
+} */
+
+.c{
+    background-image: url("../../assets/img/lockkey.jpg");
+    height: 1100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form{
+    border: 2px solid white;
+    padding: 70px 40px;
+    margin-top: 80px;
+    -webkit-box-shadow: 2px 3px 17px 11px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 3px 17px 11px rgba(0,0,0,0.75);
+box-shadow: 2px 3px 17px 11px rgba(0,0,0,0.75);
+}
+
+/* img{
+    width: 140px;
+    border-radius: 70%;
+    margin-left: 2.5cm;
+} */
+img{
+    width: 100px;
+    height:100px;
+    border-radius: 50%;
+    position: absolute;
+    top:30px;
+   /* padding-bottom:1cm; */
+    left:calc(50% - 50px);
+}
+
+h1{
+    color: rgb(26, 27, 27);
+    text-align: center;
+    font-weight: bold;
+    margin-top:-20px;
+    font-size: 35px;
+}
+
+label{
+    color: white;
+    font-size: 20px;
+}
+
+
+
+input,img,button{
+    -webkit-box-shadow: 2px 3px 17px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 3px 17px 1px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 17px 1px rgba(0,0,0,0.75);
+}
+
+.um{
+    font-style: italic; 
+    font-weight: bold;
+    font-size:0.9cm;
+    color: rgb(43, 255, 0);
+    text-align: center;
+ background-image: url(../../assets/img/tenor1.jpg);
+ background-size: contain;
+ height: 530px; 
+  width: 500px;
+  margin-top: 1.5cm;
+  padding-top: 0.3cm;
+}

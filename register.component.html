@@ -1,0 +1,175 @@
+
+<div class="c">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+
+            <div *ngIf="successMsg" >           
+              <div class="um">{{successMsg}}</div>
+              <div> <a href="/Home">Home</a> </div>
+           </div>
+
+            <form  class="form" #registerForm="ngForm" (ngSubmit)="submitted()" *ngIf='!registermsg'>
+                <!-- {{registerForm.form.valid}} -->
+                <h1>Register Here</h1>
+                <img class="img img-responsive " src="../../assets/img/giphy.jpg">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input #username="ngModel" [(ngModel)]="registeredUserdata.username" 
+                    name="username" type="email" class="form-control" placeholder="enter username"
+                     required>
+                     <div *ngIf="username.errors && (username.dirty||username.touched)">
+                        <small style="font-size: 16px; font-weight: bold; font-style: italic; " 
+                        class="text-danger" *ngIf="username.errors.required">Username is required*  
+                        </small></div>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input #password="ngModel" [(ngModel)]="registeredUserdata.password" 
+                     name="password" type="password" class="form-control" placeholder="enter password"
+                      required>
+                      <div *ngIf="password.errors && (password.dirty||password.touched)">
+                        <small style="font-size: 16px; font-weight: bold; font-style: italic;" 
+                        class="text-danger" *ngIf="password.errors.required">Password is required*
+                        </small></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Employee_No</label>
+                    <input #employee_no="ngModel" [(ngModel)]="registeredUserdata.employee_no" 
+                     name="employee_no" type="text" class="form-control" placeholder="enter employee_no"
+                      required>
+                      <div *ngIf="employee_no.errors && (employee_no.dirty||employee_no.touched)">
+                        <small style="font-size: 16px; font-weight: bold; font-style: italic;" 
+                        class="text-danger" *ngIf="employee_no.errors.required">Employee_No is required*
+                        </small></div>
+                </div>
+
+                
+                    <label style="margin-top:0.5cm;margin-bottom: 0.5cm;">Gender :</label>
+                    <label class="radio-inline" style="margin-left: 40px;">
+                    <input #gender="ngModel" [(ngModel)]="registeredUserdata.gender" 
+                    type="radio" name="gender" value="Male" required> Male
+                     </label>
+                    <label class="radio-inline" style="margin-left: 20px;">
+                    <input #gender="ngModel" [(ngModel)]="registeredUserdata.gender" 
+                    type="radio" name="gender" value="Female" required> Female
+                    </label>
+                
+                <div class="form-group">
+                    <label>Location</label>
+                    <select #location="ngModel" name="location" 
+                    class="custom-select" [(ngModel)]="registeredUserdata.location" required>
+                        <option value="">None</option>
+                        <option>Mysore</option>
+                        <option>Chennai-Mcity</option>
+                        <option>Chennai-solaingnalur</option>
+                        <option>Chennai-Navalur-branch</option>
+                        <option>Bangalore-Mainbranch</option>
+                        <option>Bangalore-SEZ2</option>
+                        <option>Hyderabad-SEZ</option>
+                        <option>Hyderabad-STP</option>
+                        <option>Trivendram</option>
+                        <option>Mangalore-SEZ</option>
+                        <option>Mangalore-STP</option>
+                        <option>Bhuvaneshwar</option>
+                        <option>Jaipur</option>
+                        <option>Pune-Phase1</option>
+                        <option>Pune-Phase2</option>
+                        <option>Pune-Phase3</option>
+                        <option>Chandigarh</option>
+                        <option>Mohali</option>
+                        <option>Gurgaon</option>
+                        <option>Nagpur</option>
+                      </select>
+
+                    <div *ngIf="location.invalid && location.touched && location.pristine">
+                        <small style="font-size: 16px; font-weight: bold; font-style: italic;"
+                        class="text-danger">Location is required*</small>
+                    </div>
+                    <div *ngIf="location.invalid && location.dirty">
+                        <small style="font-size: 16px; font-weight: bold; font-style: italic;"
+                        class="text-danger">please select a valid Location</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Department</label>
+                    <select class="custom-select" #department="ngModel" name="department"
+                    [(ngModel)]="registeredUserdata.department" required>
+                        <option value="">None</option>
+                        <option>ADM</option>
+                        <option>IVS</option>
+                        <option>DX</option>
+                        <option>CIS/IMS</option>
+                        <option>IS</option>
+                      </select>
+                      <div *ngIf="department.invalid && department.touched && department.pristine">
+                        <small style="font-size: 16px; font-weight: bold; font-style: italic;"
+                        class="text-danger">Department is required*</small>
+                    </div>
+                    <div *ngIf="department.invalid && department.dirty">
+                        <small style="font-size: 16px; font-weight: bold; font-style: italic;"
+                        class="text-danger">please select your valid Department</small>
+                    </div>
+                
+                </div>
+
+                <div class="form-group">
+                    <label>Designation</label>
+                    <select class="custom-select" #designation="ngModel" name="designation"
+                    [(ngModel)]="registeredUserdata.designation" required>
+                        <option value="">None</option>
+                        <option>Education and training Assessment (ETA)</option>
+                        <option>Systems Engineer Trainee (Technical stream, Engineering grads)</option>
+                        <option>Operational Executive</option>
+                        <option>Senior Operational Executive</option>
+                        <option>Systems Engineer</option>
+                        <option>Senior Systems Engineer</option>
+                        <option>Technical Analyst</option>
+                        <option>Technology Lead</option>
+                        <option>Project Manager</option>
+                        <option>Senior Project Manager</option>
+                        <option>Group Project Manager</option>
+                        <option>Delivery Manager</option>
+                        <option>Senior Delivery Manager</option>
+                        <option>AVP, VP, SVP, evp</option>
+                        <option>associate business analyst</option>
+                        <option>associate consultant or business analyst</option>
+                        <option>consultant or senior business analyst</option>
+                        <option>senior consultant or senior business analyst</option>
+                        <option>lead consultant</option>
+                        <option>principal consultant</option>
+                        <option>industry principal</option>
+                        <option>senior industry principal</option>
+                        <option>technology architect</option>
+                        <option>senior technology architect</option>
+                        <option>principal technology architect</option>
+                        <option>senior principal technology architect</option>
+                      </select>
+                      <div *ngIf="designation.invalid && designation.touched && designation.pristine">
+                        <small style="font-size: 16px; font-weight: bold; font-style: italic;"
+                        class="text-danger">Designation is required*</small>
+                    </div>
+                    <div *ngIf="designation.invalid && designation.dirty">
+                        <small style="font-size: 16px; font-weight: bold; font-style: italic;"
+                        class="text-danger">please select your valid Designation</small>
+                    </div>
+               
+                </div>
+              
+                <button type="submit" [disabled]="registerForm.form.invalid"   
+                class="btn btn-primary btn-block"  
+                style="border-radius: 30px;" >Submit</button>
+
+               
+                    <div class="text-danger" *ngIf="errorMsg"
+                     style="font-style: italic; font-weight: bold;
+                     text-align: center;">{{errorMsg}}</div>
+                   
+            </form>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    </div>
+</div></div>

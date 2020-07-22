@@ -1,0 +1,7 @@
+table{
+    background-image: url(../../assets/img/vector2.jpg);
+    background-size: cover;
+    -webkit-box-shadow: 2px 3px 17px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 3px 17px 1px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 17px 1px rgba(0,0,0,0.75);
+}

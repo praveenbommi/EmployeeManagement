@@ -1,0 +1,282 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <i class="material-icons"
+      style="font-size:65px; color: rgb(235, 228, 228);
+      ">texture</i>
+    <a class="navbar-brand" routerLink="/Home"> </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <i class="material-icons"
+      style="font-size:65px; color: rgb(238, 227, 227);
+      margin-left:-17px;">texture</i>
+   <!-- <marquee style="font-size: 18px;color: cornsilk;">LG</marquee> -->
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item active">
+          <a class="nav-link"  *ngIf="!authservice.loggedIn()" routerLink="/login">
+            <i class="material-icons"
+            style="font-size:16px;">settings_power</i>  Login</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link"  routerLink="/register">
+              <i class="material-icons"
+              style="font-size:16px;">lock</i> Sign up</a>
+        </li>
+
+        
+
+        <a class="nav-link"  routerLink="/testphase">
+          <i class="material-icons"
+          style="font-size:16px;">beenhere</i> Test</a>
+      </ul>
+      
+        </div>  
+  </nav> 
+   
+  <!-- <div class="logo">
+  </div> -->
+   <div id="demo" class="carousel slide" data-ride="carousel" style="width: 100;
+   padding-right:15cm;  ">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1" ></li>
+      <li data-target="#demo" data-slide-to="2" ></li>
+    </ul>
+    
+    <div class="carousel-inner">
+      
+      <div class="carousel-item active">
+        <img src="../../assets/img/theme1.jpg" alt="IAPA" width="1100" height="500">   
+          <div class="carousel-caption">
+          <b><h1>Infosys Automated Performance Assurance</h1></b><br>
+          <i><p>IAPA is a framework that is used to test the real time projects
+            automatically and stores the result for comparing with futures tests.
+            Infosys Performance Testing and Engineering practice helps clients 
+            overcome performance testing challenges and deliver future-proof systems in the
+             dynamic world of emerging technologies with high responsiveness, reliability, 
+             availability, scalability, and resilience. 
+             <br>
+             It is a comprehensive solution with four key components — process, people, 
+             innovative tools, and governance. These help in facilitating:<br>
+          --> Predictability in delivery excellence<br>
+        --> Optimized infrastructure and resource utilization<br>
+      --> Smarter, faster, simpler solutions<br>
+    -->Availability of application systems during unprecedented loads</p></i>
+        </div>   
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/img/ss2.jpg" alt="JMeter" width="1100" height="500">
+        <div class="carousel-caption">
+          <b><h1>JMeter</h1></b><br>
+          <i><p>JMeter is the open source testing tool that is used to test actions comparing 
+            with the result provided by IAPA and it provides Test Execution(TR) and 
+            Test Summary Report(TSR).
+            Apache JMeter may be used to test performance both on static and dynamic resources,
+             Web dynamic applications.It can be used to simulate a heavy load on a server, group
+              of servers, network or object to test its strength or to analyze overall performance 
+              under different load types.<br><br>
+               JMeter is not a browser, it works at protocol level. As far as web-services and 
+               remote services are concerned, JMeter looks like a browser (or rather, multiple browsers);
+               however JMeter does not perform all the actions supported by browsers. In particular, 
+               JMeter does not execute the Javascript found in HTML pages. Nor does it render the
+                HTML pages as a browser does (it's possible to view the response as HTML etc., 
+                but the timings are not included in any samples, and only one sample in one thread 
+                is ever displayed at a time).</p></i>
+        </div>   
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/img/theme2.jpg" alt="JMeter" width="1100" height="500">
+        <div class="carousel-caption">
+          <b><h1>Testing</h1></b><br>
+         <i><p>Testing is analyzed and validated using the result stored in IAPA
+          and the result of the existing compared and produces the Test Report which is open source 
+          and the end user can check efficently for their projects.
+          The different types of tests involved are performance testing,
+          load testing and stress testing. Apache jmeter is a desktop application
+           used to simulate heavy load on a server,group of servers,network or object 
+           to test its strength or to analyze overall performance under different load types.<br><br>
+           A Jmeter Test Plan must have listener to showcase the result of performance test execution.
+            Listeners capture the response coming back from Server while Jmeter runs and showcase in 
+            the form of – tree, tables, graphs and log files. It also allows you to save the result 
+            in a file for future reference. There are many types of listeners Jmeter provides. 
+            Some of them are: Summary Report, Aggregate Report, Aggregate Graph, View Results Tree, 
+            View Results in Table etc.
+          </p></i>
+        </div>   
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+
+  <div class="c">
+    <div class="images" style="padding-left:3cm;">
+     <img src="../../assets/img/infy2.jpg" style="height: 200px;
+      width: 320px;  padding-right: 1cm; padding-bottom: 1cm;
+      padding-left: 1cm; padding-top: 1cm;">
+      <img src="../../assets/img/infy.jpg" style="height: 200px;
+      width: 320px; padding-right: 1cm; padding-bottom: 1cm;
+      padding-left: 1cm; padding-top: 1cm; ">
+      <img src="../../assets/img/Infosys-campus-bangalore.jpg" style="height: 200px;
+      width: 320px;  padding-right: 1cm; padding-bottom: 1cm;
+      padding-left: 1cm; padding-top: 1cm;">
+      <img src="../../assets/img/IT-SEZ-INFOSYS-Chennai.jpg" style="height: 200px;
+      width: 320px; padding-right: 1cm; padding-bottom: 1cm;
+      padding-left: 1cm; padding-top: 1cm; ">
+      <img src="../../assets/img/Infyhyd.jpg" style="height: 200px;
+      width: 320px; padding-right: 1cm; padding-bottom: 1cm;
+      padding-left: 1cm; padding-top: 1cm; ">
+      <img src="../../assets/img/infytrivandram.jpg" style="height: 200px;
+      width: 320px; padding-right: 1cm; padding-bottom: 1cm;
+      padding-left: 1cm; padding-top: 1cm; ">
+      <img src="../../assets/img/mangaloreinfy.jpg" style="height: 200px;
+      width: 320px; padding-right: 1cm; padding-bottom: 1cm;
+      padding-left: 1cm; padding-top: 1cm;">
+      <img src="../../assets/img/infypune.jpg" style="height: 200px;
+      width: 320px; padding-right: 1cm; padding-bottom: 1cm;
+      padding-left: 1cm; padding-top: 1cm; ">
+      <img src="../../assets/img/infy-chandigarh-dc.jpg" style="height: 200px;
+      width: 320px;  padding-right: 1cm; padding-bottom: 1cm;
+      padding-left: 1cm; padding-top: 1cm;">
+      </div>
+  
+<!-- <span id="div1">linear</span>
+<span id="div2">ease</span>
+<span id="div3">ease-in</span>
+<span id="div4">ease-out</span>
+<span id="div5">ease-in-out</span> -->
+
+        <div class="row">
+        <div class="cert_courses_block">
+           <b> <h3>IAPA</h3></b>
+            <ul class="trend_list">
+                <li><a href="#"><small>
+                  DevOps Certification Training</small></a></li>
+                <li><a href="#"><small>
+                  AWS Architect Certification Training</small></a></li>
+                <li><a href="#"><small>
+                  Big Data Hadoop Certification Training</small></a></li>
+                <li><a href="#"><small>Tableau Training &amp;
+                   Certification</small></a></li>
+                <li><a href="#"><small>
+                  Python Certification Training for Data Science</small></a></li>
+               
+            </ul>
+        </div>
+        <div class="master_courses_block">
+            <b><h3>Testing Phase</h3></b>
+            <ul class="master_list">
+                <li><a href="#"><small>Data Scientist Masters Program</small></a></li>
+                <li><a href="#"><small>DevOps Engineer Masters Program</small></a></li>
+                <li><a href="#"><small>Cloud Architect Masters Program</small></a></li>
+                <li><a href="#"><small>Big Data Architect Masters Program</small></a></li>
+                <li><a href="#"><small>Machine Learning Engineer Masters Program</small></a></li> 
+            </ul>
+        </div>
+        
+        
+        <div class="company_links">
+           <b> <h3>Company</h3></b>
+            <ul>
+                <li id="about-us">
+                    <a href="#" class="trackButton" data-button-name="About us" 
+                    data-button-location="Final fold navigation" data-button-type="Static">About us</a>
+                </li>
+                <li id="footer_news-and-media">
+                    <a href="#" class="trackButton" data-button-name="News
+                     &amp; Media" data-button-location="Final fold navigation" data-button-type="Static">News &amp; Media</a>
+                </li>
+                <li id="all-reviews">
+                    <a href="#" class="trackButton" data-button-name="Reviews" 
+                    data-button-location="Final fold navigation" data-button-type="Static">Reviews</a>
+                </li>
+                <li id="footer_contact-us">
+                    <a href="#" class="trackButton" data-button-name="Contact us"
+                     data-button-location="Final fold navigation" data-button-type="Static">Contact us</a>
+                </li>
+                <li id="#">
+                    <a class="trackButton" data-button-name="Blog all" 
+                    data-button-location="Final fold navigation" data-button-type="static"
+                     href="#">Blog</a>
+                </li>
+               
+                
+            </ul>
+        </div>
+        <div class="work_with_us_block">
+            <b><h3>Work with us</h3></b>
+            <ul class="company_links">
+                <li id="footer_careers">
+                    <a href="#" class="trackButton" data-button-name="Carees"
+                     data-button-location="Final fold navigation" data-button-type="Static">Careers</a>
+                </li>
+                <li id="become-ins">
+                    <a href="#" class="trackButton" data-button-name="Become an Instructor"
+                     data-button-location="Final fold navigation" data-button-type="Static">Become an Instructor</a>
+                </li>
+                <li id="footer_become-affiliate">
+                    <a href="#" class="trackButton" data-button-name="Become an Affiliate" 
+                    data-button-location="Final fold navigation" data-button-type="Static">Become an Affiliate</a>
+                </li>
+                <li id="footer_become-partners">
+                    <a href="#" class="trackButton" data-button-name="Become a Partner" 
+                    data-button-location="Final fold navigation" data-button-type="Static">Become a Partner</a>
+                </li>
+                <li id="hirefrom-edu">
+                    <a href="#" class="trackButton" data-button-name="Hire from Edureka" 
+                    data-button-location="Final fold navigation" data-button-type="Static">Hire from Infosys</a>
+                </li>
+            </ul>
+            
+        </div>
+        </div>
+  </div>
+    
+
+  <div class="footer">
+    <span class="navbar-text">LG Management © 2020 Infosys Ltd. All rights Reserved.</span>
+  </div>
+  
+  <!-- <div class="b">
+    <div class="row pt-5"> 
+    <div class="col-sm-4">
+    <div class="card text-white bg-primary mb-3" style="height:350px;max-width: 20rem;">
+      <div class="card-header">IAPA</div>
+      <div class="card-body">
+        <h4 class="card-title">Infosys Automated Performance Assurance</h4>
+        <p class="card-text">IAPA is a framework that is used to test the real time projects
+            automatically and stores the result for comparing with futures tests. </p>
+      </div>
+    </div>
+    </div>
+  
+    <div class="col-sm-4">
+      <div class="card text-white bg-primary mb-3" style="height:350px ;max-width: 20rem;">
+        <div class="card-header">JMeter</div>
+        <div class="card-body">
+          <h4 class="card-title">Testing Tool</h4>
+          <p class="card-text">JMeter is the open source testing tool that is used to test actions comparing 
+              with the result provided by IAPA and it provides Test Execution(TR) and Test Summary Report(TSR).</p>
+        </div>
+      </div>
+      </div>
+  
+      <div class="col-sm-4">
+          <div class="card text-white bg-primary mb-3" style="height:350px ;max-width: 20rem;">
+            <div class="card-header">JMeter</div>
+            <div class="card-body">
+              <h4 class="card-title">Testing Tool</h4>
+              <p class="card-text">JMeter is the open source testing tool that is used to test actions comparing 
+                  with the result provided by IAPA and it provides Test Execution(TR) and Test Summary Report(TSR).</p>
+            </div>
+          </div>
+          </div>
+  </div>
+    </div>
+     -->

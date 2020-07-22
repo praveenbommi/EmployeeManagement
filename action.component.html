@@ -1,0 +1,73 @@
+<div class="container" *ngIf="!entered">
+    <!-- <input type="text" #username="ngModel" #employee_no="ngModel"
+    [(ngModel)]="tabledata.username||tabledata.employee_no"
+    style="margin-top:0.3cm"> -->
+
+    <input type="text" #username="ngModel" placeholder="search by username"
+    [(ngModel)]="tabledata.username"
+    style="margin-top:0.3cm">
+
+    <input type="text" #employee_no="ngModel" placeholder="search by employee_no"
+    [(ngModel)]="tabledata.employee_no"
+    style="margin-top:0.3cm">
+
+    <input type="text" #gender="ngModel" placeholder="search by gender"
+    [(ngModel)]="tabledata.gender"
+    style="margin-top:0.3cm">
+
+    <input type="text" #location="ngModel" placeholder="search by location"
+    [(ngModel)]="tabledata.location"
+    style="margin-top:0.3cm">
+    
+    <input type="text" #department="ngModel" placeholder="search by department"
+    [(ngModel)]="tabledata.department"
+    style="margin-top:0.3cm">
+
+    <input type="text" #designation="ngModel" placeholder="search by designation"
+    [(ngModel)]="tabledata.designation"
+    style="margin-top:0.3cm">
+
+    <button class="btn btn-primary" 
+ (click)="specificdata()" style="margin-left:13.5cm;margin-top: 0.2cm;">search</button></div>
+
+ <div style="text-align: center;font-weight: bold;color: rgb(94, 95, 94);
+ margin-top: 0.5cm;">
+     Data from {{tabledata.username}} {{tabledata.employee_no}} {{tabledata.gender}} {{tabledata.location}} {{tabledata.department}} {{tabledata.designation}} <br>
+     There are {{count}} records in {{tabledata.username}} {{tabledata.employee_no}} {{tabledata.gender}} {{tabledata.location}} {{tabledata.department}} {{tabledata.designation}}
+ </div>
+
+ <div *ngIf="errmsg" class="text-danger" style="font-weight: bold; text-align: center;">
+     {{em}}<br>
+     <button class="btn btn-danger" 
+     (click)="search()" style="margin-top: 0.5cm; "
+         >Try again</button>
+     
+ </div>
+
+<table class="table-bordered table-striped table-hover" *ngIf="entered && !errmsg"
+style=" margin-top: 1cm;margin:auto">
+    <tr>
+        <th>#</th>
+        <th>Username</th>
+        <th>Employee_NO</th>
+        <th>Gender</th>
+        <th>Location</th>
+        <th>Department</th> 
+        <th>Designation</th>
+    </tr>
+    <tr *ngFor="let i of listofdata;let p=index">
+        <td>{{p+1}}</td>
+        <td>{{i.username}}</td>
+        <td>{{i.employee_no}}</td>
+        <td>{{i.gender}}</td>
+        <td>{{i.location}}</td>
+        <td>{{i.department}}</td>
+        <td>{{i.designation}}</td>
+    </tr>
+    
+</table>
+
+<button class="btn btn-success" *ngIf="entered && !errmsg"
+(click)="search()" style="margin-top: 0.5cm; margin-left: 16cm;"
+    >Search another record</button>
+    

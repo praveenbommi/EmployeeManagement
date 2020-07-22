@@ -1,0 +1,102 @@
+
+.card-body:hover{
+    color: aqua;
+    max-zoom: 150%;
+}
+
+.row{
+    /* padding: 10%; */
+    color:rgb(10, 67, 238);
+    background-position: center;
+    box-sizing: content-box;
+    background: padding-box;
+    padding-top: 3cm;
+    padding-left: 3cm;
+}
+
+
+  
+  .card:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2); 
+    background-color: bisque;
+  }
+
+  /* .b{
+    background-image: url("../../assets/img/solar-system-theme-2.jpg");
+    height: 550px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}  */
+
+.carousel-inner  {
+  width: 100%;
+  height:470px; 
+  background-size: cover; 
+  /* border-radius: 45%; */
+  /* padding-top: 0.5cm; */
+  /* padding-bottom: 0.5cm;  */
+}
+
+.footer{
+  background-color: rgb(24, 26, 26);
+  height: 50px;
+  text-align: right;
+  color: aliceblue;
+}
+
+#demo{
+  background-color:rgb(26, 29, 29) ;
+  background-image: url("../../assets/img/dna.jpg");
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  
+}
+
+.c{
+  background-image: url("../../assets/img/theme2.jpg");
+  /* background-color: rgb(56, 54, 54); */
+  background-size:cover;
+  padding: 2cm;
+  
+  width: 100%;
+  
+}
+a{
+  color:floralwhite;
+  /* background-color: rgb(243, 18, 18); */
+  /* font-style: italic; */
+  font-weight: bold;
+  font-size: 1;
+  
+}
+
+.images:hover{
+  background-image: url("../../assets/img/theme3.jpg");
+
+}
+
+img:hover{
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+  
+}
+
+ .navbar-brand{
+   background-image: url("../../assets/img/logo.jpg");
+   height: 2cm;
+   width: 5.5cm;
+   /* margin-left:1cm; */
+   margin-bottom:25px;
+   /* border-radius: 10%; */
+   background-size:220px
+ }
+
+ .navbar{
+   height:55px;
+   background-color: rgb(71, 70, 70);
+ }

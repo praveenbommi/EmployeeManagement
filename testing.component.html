@@ -1,0 +1,349 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="/Home">Performance Test</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item ">
+            <a class="nav-link" routerLink="/Home">
+                <i class="material-icons"
+            style="font-size:20px;">home</i>home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="authservice.loggedIn()" 
+          style="cursor: pointer;" (click)="authservice.logoutuser()">
+          <i class="material-icons"
+            style="font-size:20px;">no_encryption</i>
+          Logout</a>
+      </li>
+        
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Navigation
+            </a>
+            <div class="dropdown-menu dropdown-menu-right ">
+                <a href="/action" class="dropdown-item">Action</a>
+            </div>
+        </li>
+
+      </ul>
+      
+        </div>
+  </nav>
+
+  <!-- <div class="container-fluid">
+    <div class="row header-section">
+        <span> Upload and Download </span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="row card">
+                <div class="col-sm-12">
+                    <h4>Upload Section</h4> 
+                    <div id="fileSelector">
+                        <input type="file" name="fileUplaod" id="fileUpload"
+                        multiple ng2FileSelect [uploader]="uploader">
+                    </div>
+                    <div>
+                        <div class="row uploadList" *ngFor="let item of uploader.queue">
+                            <div class="col-sm-4">{{item.file.name}}</div>
+                            <div class="col-sm-4">
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" 
+                                    [ngStyle]="{'width':item.progress+'%'}"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                    <button type="button" class="btn btn-dark" (click)="item.upload()">Upload</button>
+                                    <button type="button" class="btn btn-danger" (click)="item.remove()">Cancel</button>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="row" *ngIf="uploader?.queue?.length > 0">
+                            <button type="button" class="btn btn-primary" (click)="uploader.uploadAll()">Upload All</button>
+                    </div>
+                </div>                
+            </div>
+
+            <div class="row card">
+                <h4>Download Section</h4>
+
+                <div class="row" *ngFor="let item of attachmentList; let i = index"
+                style="margin:10px;padding:5px;background-color:rgb(231, 229, 229); border-radius:5px; line-height:40px;">
+                    <div class="col-sm-7">{{item.originalname}}</div>
+                    <div class="col-sm-5" style="text-align:center;"><button type="button" class="btn btn-primary" (click)="download(i)">Download</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div> -->
+
+  <div style="background-image: url(../../assets/img/home.jpg);">
+<div>
+  <button type="button" (click)="getall()" class="btn btn-success">Get</button>
+  <a href="/register">Add</a>
+</div>
+
+
+  <div  class="row mt-5 ml-auto" style="padding-left: 2cm;" >
+    <div class="col-md-4 mb-4" *ngFor="let i of listofusers; let p=index">
+        <i class="material-icons"
+        style="font-size:20px;color: rgb(240, 37, 37);margin-top: 40px;">thumb_up</i>
+    <div class="card" style="width:315px; height: 275px;">
+       <img class="card-img-top" src="../../assets/img/0410_gif_combined_v2.jpg" alt="Card image" 
+      style="width:100%; height: 170px;"> 
+      <div class="card-body">
+         <h3 class="card-title" style="color: rgb(70, 69, 66);">Dood {{p+1}}</h3>
+         <p class="card-text">
+         <span style="font-style: italic; font-weight: bold; color: rgb(23, 7, 250);font-size: 18px;">
+          {{i.username | slice:-100:-12}}</span></p>
+      </div>
+      <!-- <div class="card-footer"> -->
+      
+     <!-- </div> -->
+       
+    </div>
+    <button type="button" 
+    (click)="deleteuser(p,i.username)" class="btn"
+    style="width: 120px; margin-top: 10px;margin-left: 100px; border-radius: 50%;
+    background-color: rgb(248, 7, 7);color: white;" >Delete </button>
+    </div>
+</div>
+</div>
+
+<div>
+<div class="row" style="background-image: url(../../assets/img/home.jpg);"
+>
+<div class="container" style="margin-top: 2cm;">
+<div class="table table-bordered ">          
+    <table class="table" id="dt" style="color: burlywood;">
+     
+      <thead style="color: rgb(255, 255, 255);font-size: 20px;">
+        <!-- <tr style="font-style: normal;font-size: 30px;font-weight: bold">Infosyians</tr> -->
+        <tr>
+          <th>#</th>
+          <th>Username</th>
+          <!-- <th>Password</th> -->
+          <th>Employee_NO</th>
+          <th>Gender</th>
+          <th>Location</th>
+          <th>Department</th>
+          <th>Designation</th>
+          <!-- <th>Delete</th> -->
+          <th *ngIf='!updatedmsg && successmsg'>Modify</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ttt" *ngFor="let v of listofusers;let p=index">
+          <td>{{p+1}}</td>
+          <td>{{v.username | slice:-100:-12}}</td>
+          <!-- <td>{{v.password}}</td> -->
+          <td>{{v.employee_no}}</td>
+          <td>{{v.gender}}</td>
+          <td>{{v.location}}</td>
+          <td>{{v.department}}</td>
+          <td>{{v.designation}}</td>
+          
+          <!-- <td> <button type="button" 
+            (click)="deleteuser(p,i.username)" class="btn"
+            style="border-radius: 50%;
+            background-color: rgb(248, 7, 7);color: white;" >Delete </button></td> -->
+            
+           <td>
+           <button class="btn btn-primary" (click)="beforeupdate(v.username)"
+            style="max-width:5cm;">Update</button>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+    <button (click)="downloadPDF()"  class="btn btn-success">
+    <i class="material-icons"
+    style="font-size:18px;">file_download</i> Download PDF</button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- <app-action [parentData]="name"></app-action> -->
+
+<div *ngIf="(updatedmsg && !updatemany)">
+  <div class="um">{{updatedmsg}}</div>
+  <button (click)="getall()" class="btn btn-primary"
+  style="margin-left: 14cm;">Click here to view the updated change</button> 
+</div>
+
+<div *ngIf="(updatemany && username && successmsg) || errm">  
+<div class="c">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-12"></div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+              <form  class="form" #registerForm="ngForm" (ngSubmit)="afterupdate()" >
+                  <h1>Update Here</h1>
+                  <img class="img img-responsive " src="../../assets/img/avatar.jpg">
+                  <div class="form-group">
+                      <label>Username</label>
+                      <input #username="ngModel" [(ngModel)]="registeredUserdata.username" 
+                      name="username" type="email" class="form-control" placeholder="enter username"
+                       required>
+                       <div *ngIf="username.errors && (username.dirty||username.touched)">
+                          <small style="font-size: 16px; font-weight: bold; font-style: italic; " 
+                          class="text-danger" *ngIf="username.errors.required">Username is required*  
+                          </small></div>
+                  </div>
+                  <div class="form-group">
+                      <label>Password</label>
+                      <input #password="ngModel" [(ngModel)]="registeredUserdata.password" 
+                       name="password" type="password" class="form-control" placeholder="enter password"
+                        required>
+                        <div *ngIf="password.errors && (password.dirty||password.touched)">
+                          <small style="font-size: 16px; font-weight: bold; font-style: italic;" 
+                          class="text-danger" *ngIf="password.errors.required">Password is required*
+                          </small></div>
+                  </div>
+  
+                  <div class="form-group">
+                      <label>Employee_No</label>
+                      <input #employee_no="ngModel" [(ngModel)]="registeredUserdata.employee_no" 
+                       name="employee_no" type="text" class="form-control" placeholder="enter employee_no"
+                        required>
+                        <div *ngIf="employee_no.errors && (employee_no.dirty||employee_no.touched)">
+                          <small style="font-size: 16px; font-weight: bold; font-style: italic;" 
+                          class="text-danger" *ngIf="employee_no.errors.required">Employee_No is required*
+                          </small></div>
+                  </div>
+  
+                  
+                      <label style="margin-top:0.5cm;margin-bottom: 0.5cm;">Gender :</label>
+                      <label class="radio-inline" style="margin-left: 40px;">
+                      <input #gender="ngModel" [(ngModel)]="registeredUserdata.gender" 
+                      type="radio" name="gender" value="Male" required> Male
+                       </label>
+                      <label class="radio-inline" style="margin-left: 20px;">
+                      <input #gender="ngModel" [(ngModel)]="registeredUserdata.gender" 
+                      type="radio" name="gender" value="Female" required> Female
+                      </label>
+                  
+                  <div class="form-group">
+                      <label>Location</label>
+                      <select #location="ngModel" name="location" 
+                      class="custom-select" [(ngModel)]="registeredUserdata.location" required>
+                          <option value="">None</option>
+                          <option>Mysore</option>
+                          <option>Chennai-Mcity</option>
+                          <option>Chennai-solaingnalur</option>
+                          <option>Chennai-Navalur-branch</option>
+                          <option>Bangalore-Mainbranch</option>
+                          <option>Bangalore-SEZ2</option>
+                          <option>Hyderabad-SEZ</option>
+                          <option>Hyderabad-STP</option>
+                          <option>Trivendram</option>
+                          <option>Mangalore-SEZ</option>
+                          <option>Mangalore-STP</option>
+                          <option>Bhuvaneshwar</option>
+                          <option>Jaipur</option>
+                          <option>Pune-Phase1</option>
+                          <option>Pune-Phase2</option>
+                          <option>Pune-Phase3</option>
+                          <option>Chandigarh</option>
+                          <option>Mohali</option>
+                          <option>Gurgaon</option>
+                          <option>Nagpur</option>
+                        </select>
+  
+                      <div *ngIf="location.invalid && location.touched && location.pristine">
+                          <small style="font-size: 16px; font-weight: bold; font-style: italic;"
+                          class="text-danger">Location is required*</small>
+                      </div>
+                      <div *ngIf="location.invalid && location.dirty">
+                          <small style="font-size: 16px; font-weight: bold; font-style: italic;"
+                          class="text-danger">please select a valid Location</small>
+                      </div>
+                  </div>
+  
+                  <div class="form-group">
+                      <label>Department</label>
+                      <select class="custom-select" #department="ngModel" name="department"
+                      [(ngModel)]="registeredUserdata.department" required>
+                          <option value="">None</option>
+                          <option>ADM</option>
+                          <option>IVS</option>
+                          <option>DX</option>
+                          <option>CIS/IMS</option>
+                          <option>IS</option>
+                        </select>
+                        <div *ngIf="department.invalid && department.touched && department.pristine">
+                          <small style="font-size: 16px; font-weight: bold; font-style: italic;"
+                          class="text-danger">Department is required*</small>
+                      </div>
+                      <div *ngIf="department.invalid && department.dirty">
+                          <small style="font-size: 16px; font-weight: bold; font-style: italic;"
+                          class="text-danger">please select your valid Department</small>
+                      </div>
+                  
+                  </div>
+  
+                  <div class="form-group">
+                      <label>Designation</label>
+                      <select class="custom-select" #designation="ngModel" name="designation"
+                      [(ngModel)]="registeredUserdata.designation" required>
+                          <option value="">None</option>
+                          <option>Education and training Assessment (ETA)</option>
+                          <option>Systems Engineer Trainee (Technical stream, Engineering grads)</option>
+                          <option>Operational Executive</option>
+                          <option>Senior Operational Executive</option>
+                          <option>Systems Engineer</option>
+                          <option>Senior Systems Engineer</option>
+                          <option>Technical Analyst</option>
+                          <option>Technology Lead</option>
+                          <option>Project Manager</option>
+                          <option>Senior Project Manager</option>
+                          <option>Group Project Manager</option>
+                          <option>Delivery Manager</option>
+                          <option>Senior Delivery Manager</option>
+                          <option>AVP, VP, SVP, evp</option>
+                          <option>associate business analyst</option>
+                          <option>associate consultant or business analyst</option>
+                          <option>consultant or senior business analyst</option>
+                          <option>senior consultant or senior business analyst</option>
+                          <option>lead consultant</option>
+                          <option>principal consultant</option>
+                          <option>industry principal</option>
+                          <option>senior industry principal</option>
+                          <option>technology architect</option>
+                          <option>senior technology architect</option>
+                          <option>principal technology architect</option>
+                          <option>senior principal technology architect</option>
+                        </select>
+                        <div *ngIf="designation.invalid && designation.touched && designation.pristine">
+                          <small style="font-size: 16px; font-weight: bold; font-style: italic;"
+                          class="text-danger">Designation is required*</small>
+                      </div>
+                      <div *ngIf="designation.invalid && designation.dirty">
+                          <small style="font-size: 16px; font-weight: bold; font-style: italic;"
+                          class="text-danger">please select your valid Designation</small>
+                      </div>
+                 
+                  </div>
+                
+                  <button type="submit" [disabled]="registerForm.form.invalid"   
+                  class="btn btn-primary btn-block"  
+                  style="border-radius: 30px;"  >Submit</button>
+
+                  <div class="text-danger" *ngIf="errormsg"
+                   style="font-style: italic; font-weight: bold;padding-top: 0.5cm;
+                   text-align: center;">{{errormsg}}</div>
+                 
+              </form>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12"></div>
+      </div>
+  </div></div>
+</div>
+
+\
